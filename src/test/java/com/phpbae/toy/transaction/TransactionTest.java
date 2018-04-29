@@ -1,7 +1,7 @@
 package com.phpbae.toy.transaction;
 
-import com.phpbae.toy.Service.MemberServiceImpl;
 import com.phpbae.toy.Domain.Member;
+import com.phpbae.toy.Service.MemberService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import java.util.List;
 public class TransactionTest {
 
     @Autowired
-    private MemberServiceImpl memberServiceImpl;
+    private MemberService memberServiceImpl;
 
     @Test
     public void 트랜잭션Test() throws Exception {

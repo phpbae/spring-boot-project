@@ -24,8 +24,8 @@ public class TransactionalConfiguration {
     @ConditionalOnClass(DataSource.class)
     public PlatformTransactionManager setTransactionManager(EntityManagerFactory entityManagerFactory) {
         JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
+        jpaTransactionManager.setDataSource((DataSource) context.getBean("dataSource"));
         jpaTransactionManager.setEntityManagerFactory(entityManagerFactory);
-        //jpaTransactionManager.setDataSource((DataSource) context.getBean("dataSource"));
         return jpaTransactionManager;
     }
 

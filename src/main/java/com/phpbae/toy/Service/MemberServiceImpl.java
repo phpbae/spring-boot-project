@@ -30,6 +30,6 @@ public class MemberServiceImpl implements MemberService {
 
     public void testTransaction(List<Member> members) {
         memberRepository.saveAll(members);
-        int error = 0 / 0; //error 발생
+//        int error = 0 / 0; //error 발생
     }
 }
