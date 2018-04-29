@@ -16,25 +16,25 @@ import org.springframework.web.bind.annotation.RestController;
 public class IndexController {
 
     @Autowired
-    private MemberService memberService;
+    private MemberService memberServiceImpl;
 
     @Autowired
     private ProfileChecker profileChecker;
 
     @GetMapping(value = "/members", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity getMembers(){
+    public ResponseEntity getMembers() {
 
-        return new ResponseEntity(memberService.getMembers(), HttpStatus.OK);
+        return new ResponseEntity(memberServiceImpl.getMembers(), HttpStatus.OK);
     }
 
     @GetMapping(value = "/members/{idx}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity getMember(@PathVariable(name = "idx") int idx){
+    public ResponseEntity getMember(@PathVariable(name = "idx") int idx) {
 
-        return new ResponseEntity(memberService.getMember(idx), HttpStatus.OK);
+        return new ResponseEntity(memberServiceImpl.getMember(idx), HttpStatus.OK);
     }
 
     @GetMapping(value = "/profile", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity getActiveProfile(){
+    public ResponseEntity getActiveProfile() {
         return new ResponseEntity(profileChecker.getActiveProfile(), HttpStatus.OK);
     }
 

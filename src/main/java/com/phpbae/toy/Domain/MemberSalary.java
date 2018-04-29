@@ -1,4 +1,4 @@
-package com.phpbae.toy.domain;
+package com.phpbae.toy.Domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

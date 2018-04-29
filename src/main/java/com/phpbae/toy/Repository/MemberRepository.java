@@ -1,6 +1,6 @@
 package com.phpbae.toy.Repository;
 
-import com.phpbae.toy.domain.Member;
+import com.phpbae.toy.Domain.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
