@@ -1,14 +1,12 @@
 package com.phpbae.toy.Configure;
 
 
-import org.aspectj.lang.annotation.Aspect;
 import org.springframework.aop.Advisor;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-import org.springframework.context.annotation.*;
-import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.interceptor.MatchAlwaysTransactionAttributeSource;
 import org.springframework.transaction.interceptor.RollbackRuleAttribute;
@@ -18,13 +16,12 @@ import org.springframework.transaction.interceptor.TransactionInterceptor;
 import java.util.Collections;
 
 
-@Aspect
 @Configuration
 public class TransactionAdviceConfiguration {
 
     private static final String TX_METHOD_NAME = "*";
     private static final int TX_METHOD_TIMEOUT = 3;
-    private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.phpbae.toy.Service..*.*(..))";
+    private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.phpbae.toy.Service..*Impl.*(..))";
 
     @Autowired
     private PlatformTransactionManager transactionManager;
