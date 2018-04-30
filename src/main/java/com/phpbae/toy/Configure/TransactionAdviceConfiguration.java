@@ -19,7 +19,9 @@ import org.springframework.transaction.interceptor.TransactionInterceptor;
 import java.util.Collections;
 
 
+@Aspect
 @Configuration
+@EnableAspectJAutoProxy
 public class TransactionAdviceConfiguration {
 
     private static final String TX_METHOD_NAME = "*";

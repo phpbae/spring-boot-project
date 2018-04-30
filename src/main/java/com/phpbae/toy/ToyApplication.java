@@ -6,11 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 //@ImportResource("classpath:aop.xml")
 @EnableJpaRepositories(basePackages = "com.phpbae.toy.Repository")
 @EntityScan(basePackages = "com.phpbae.toy.Domain")
 @EnableEncryptableProperties
+@EnableTransactionManagement
 @SpringBootApplication
 public class ToyApplication {
 
