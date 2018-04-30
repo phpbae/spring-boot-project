@@ -20,7 +20,6 @@ import java.util.Collections;
 
 
 @Configuration
-@EnableAspectJAutoProxy
 public class TransactionAdviceConfiguration {
 
     private static final String TX_METHOD_NAME = "*";
