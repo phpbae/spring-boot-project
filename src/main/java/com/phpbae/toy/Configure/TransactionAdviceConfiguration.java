@@ -1,10 +1,15 @@
 package com.phpbae.toy.Configure;
 
 
+import org.aspectj.lang.annotation.Aspect;
 import org.springframework.aop.Advisor;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
+import org.springframework.aop.aspectj.AspectJPointcutAdvisor;
+import org.springframework.aop.support.DefaultIntroductionAdvisor;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -17,6 +22,7 @@ import java.util.Collections;
 
 
 @Configuration
+@AutoConfigureAfter(value = {TransactionalConfiguration.class})
 public class TransactionAdviceConfiguration {
 
     private static final String TX_METHOD_NAME = "*";
