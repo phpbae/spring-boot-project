@@ -6,7 +6,7 @@
 	<groupId>com.phpbae</groupId>
 	<artifactId>toy</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>toy</name>
 	<description>Toy project for Spring Boot</description>
@@ -124,6 +124,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<wait>1000</wait>
+					<maxAttempts>180</maxAttempts>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
