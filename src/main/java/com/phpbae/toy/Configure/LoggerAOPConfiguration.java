@@ -22,14 +22,14 @@ public class LoggerAOPConfiguration {
     public void beforeLogger(JoinPoint joinPoint) {
         signature = joinPoint.getSignature();
         target = joinPoint.getTarget();
-        logger.info(signature.getName() + " Start Process");
+        logger.info(signature.getName() + " Start Process {}", joinPoint);
     }
 
     @After(value = "execution(* com.phpbae.toy.Service.*.*(..))")
     public void afterLogger(JoinPoint joinPoint) {
         signature = joinPoint.getSignature();
         target = joinPoint.getTarget();
-        logger.info(signature.getName() + " End Process");
+        logger.info(signature.getName() + " End Process {}", joinPoint);
     }
 
 }

@@ -2,14 +2,21 @@ package com.phpbae.toy.Service;
 
 import com.phpbae.toy.Domain.Member;
 import com.phpbae.toy.Domain.VO.MemberVO;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Transactional(rollbackFor = Exception.class)
 public interface MemberService {
     public List<MemberVO> getMembers();
 
     public MemberVO getMember(int idx);
 
-    //    @Transactional(propagation =  Propagation.REQUIRED, rollbackFor = {Exception.class, RuntimeException.class})
+    public MemberVO setMember(MemberVO memberVO);
+
+    public MemberVO modifyMember(int idx, MemberVO memberVO);
+
+    public void deleteMember(int idx);
+
     public void testTransaction(List<Member> members);
 }

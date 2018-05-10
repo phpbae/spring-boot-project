@@ -2,6 +2,7 @@ package com.phpbae.toy.transaction;
 
 import com.phpbae.toy.Domain.Member;
 import com.phpbae.toy.Service.MemberService;
+import com.phpbae.toy.Service.MemberServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,14 +12,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
 public class TransactionTest {
 
     @Autowired
     private MemberService memberServiceImpl;
 
-    @Test
+    @Test(expected = ArithmeticException.class)
     public void 트랜잭션Test() throws Exception {
         List<Member> memberList = new ArrayList();
         for (int i = 1; i <= 10; i++) {

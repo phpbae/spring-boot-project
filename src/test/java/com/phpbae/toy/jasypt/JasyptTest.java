@@ -2,6 +2,7 @@ package com.phpbae.toy.jasypt;
 
 
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(properties = "classpath:application-test.properties")
 public class JasyptTest {
 
-
+    @Ignore
     @Test
     public void 암호화복호화Test() throws Exception {
         StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
