@@ -16,7 +16,7 @@ public class JasyptTest {
     @Test
     public void 암호화복호화Test() throws Exception {
         StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
-        encryptor.setPassword("m2"); //암호화 Key 정보.
+        encryptor.setPassword("test"); //암호화 Key 정보.
         encryptor.setAlgorithm("PBEWithMD5AndDES"); //암호화 알고리즘
         encryptor.setStringOutputType("base64");
 
