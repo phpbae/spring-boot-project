@@ -15,6 +15,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
@@ -57,6 +58,22 @@ public class RestTest {
 
     @Test
     public void insertMemberTest() {
+
+        MemberVO memberVO = new MemberVO();
+        memberVO.setEmail("insertTest@naver.com");
+        memberVO.setPassword("1111");
+        memberVO.setAge(30);
+        memberVO.setName("삽입테스트");
+
+        MemberVO insertedVO = testRestTemplate.postForObject("/api/members/insert", memberVO, MemberVO.class);
+
+        MemberVO vo = memberService.getMember(insertedVO.getMemberIdx());
+
+        assertNotNull(insertedVO);
+        assertNotNull(vo);
+        assertEquals("idx : ", true, insertedVO.getMemberIdx() == vo.getMemberIdx());
+        assertEquals("이름 : ", "삽입테스트", insertedVO.getName());
+        assertEquals("이름값은 같은가 : ", true, insertedVO.getName().equals(vo.getName()));
 
     }
 

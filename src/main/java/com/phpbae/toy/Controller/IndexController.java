@@ -30,7 +30,7 @@ public class IndexController {
     }
 
     @PostMapping(value = "members/insert", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity insertMember(@ModelAttribute MemberVO memberVO) {
+    public ResponseEntity insertMember(@RequestBody MemberVO memberVO) {
         return new ResponseEntity(memberServiceImpl.setMember(memberVO), HttpStatus.OK);
     }
 
