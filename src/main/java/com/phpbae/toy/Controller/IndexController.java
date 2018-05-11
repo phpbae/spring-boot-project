@@ -35,13 +35,22 @@ public class IndexController {
     }
 
     @PutMapping(value = "members/modify/{idx}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity modifyMember(@PathVariable(name = "idx") int idx, @ModelAttribute MemberVO memberVO) {
-        return null;
+    public ResponseEntity modifyMember(@PathVariable(name = "idx") int idx, @RequestBody MemberVO memberVO) {
+        return new ResponseEntity(memberServiceImpl.modifyMember(idx, memberVO), HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "members/delete/{idx}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @DeleteMapping(value = "members/delete/{idx}")
     public ResponseEntity deleteMember(@PathVariable(name = "idx") int idx) {
-        return null;
+
+        ResponseEntity responseEntity = null;
+        try {
+            memberServiceImpl.deleteMember(idx);
+            responseEntity = new ResponseEntity(null, HttpStatus.OK);
+        } catch (Exception e) {
+            responseEntity = new ResponseEntity("error", HttpStatus.BAD_REQUEST);
+        }
+
+        return responseEntity;
     }
 
     @GetMapping(value = "/profile", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)

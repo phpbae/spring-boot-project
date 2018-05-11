@@ -56,7 +56,15 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public MemberVO modifyMember(int idx, MemberVO memberVO) {
-        return null;
+        Member member = memberRepository.getOne(idx);
+
+        member.setEmail(memberVO.getEmail());
+        member.setPassword(memberVO.getPassword());
+        member.getMemberInformation().setName(memberVO.getName());
+        member.getMemberInformation().setAge(memberVO.getAge());
+        member.getMemberInformation().setAdministratorRights(memberVO.getAdministratorRights());
+
+        return new MemberVO(memberRepository.save(member));
     }
 
     @Override
