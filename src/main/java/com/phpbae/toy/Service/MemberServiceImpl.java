@@ -73,8 +73,15 @@ public class MemberServiceImpl implements MemberService {
         memberRepository.deleteMemberByIdx(idx);
     }
 
+    @Override
     public void testTransaction(List<Member> members) {
         memberRepository.saveAll(members);
         int error = 0 / 0; //error 발생
+    }
+
+    @Override
+    public void testTransactionMethodLevel(List<Member> members) {
+        //readOnly 이기 때문에, insert 시, 에러 발생.
+        memberRepository.saveAll(members);
     }
 }

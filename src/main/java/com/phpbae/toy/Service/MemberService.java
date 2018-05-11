@@ -19,4 +19,7 @@ public interface MemberService {
     public void deleteMember(int idx);
 
     public void testTransaction(List<Member> members);
+
+    @Transactional(readOnly = true, rollbackFor = Exception.class)
+    public void testTransactionMethodLevel(List<Member> members);
 }
