@@ -53,7 +53,7 @@ public class IndexController {
         return responseEntity;
     }
 
-    @GetMapping(value = "/profile", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @GetMapping(value = "/profile/check", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity getActiveProfile() {
         return new ResponseEntity(profileChecker.getActiveProfile(), HttpStatus.OK);
     }
