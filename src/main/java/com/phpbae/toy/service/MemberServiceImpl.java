@@ -1,10 +1,10 @@
-package com.phpbae.toy.Service;
+package com.phpbae.toy.service;
 
-import com.phpbae.toy.Domain.Member;
-import com.phpbae.toy.Domain.MemberInformation;
-import com.phpbae.toy.Domain.VO.MemberVO;
-import com.phpbae.toy.Repository.MemberRepository;
-import com.phpbae.toy.Repository.MemberSalaryRepository;
+import com.phpbae.toy.domain.Member;
+import com.phpbae.toy.domain.MemberInformation;
+import com.phpbae.toy.domain.vo.MemberVO;
+import com.phpbae.toy.repository.MemberRepository;
+import com.phpbae.toy.repository.MemberSalaryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

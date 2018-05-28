@@ -1,4 +1,4 @@
-package com.phpbae.toy.Component;
+package com.phpbae.toy.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;

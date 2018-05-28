@@ -1,8 +1,8 @@
-package com.phpbae.toy.Controller;
+package com.phpbae.toy.controller;
 
-import com.phpbae.toy.Component.ProfileChecker;
-import com.phpbae.toy.Domain.VO.MemberVO;
-import com.phpbae.toy.Service.MemberService;
+import com.phpbae.toy.component.ProfileChecker;
+import com.phpbae.toy.domain.vo.MemberVO;
+import com.phpbae.toy.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

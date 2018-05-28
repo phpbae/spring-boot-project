@@ -1,7 +1,7 @@
-package com.phpbae.toy.Repository;
+package com.phpbae.toy.repository;
 
 
-import com.phpbae.toy.Domain.MemberSalary;
+import com.phpbae.toy.domain.MemberSalary;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

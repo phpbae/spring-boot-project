@@ -1,6 +1,6 @@
-package com.phpbae.toy.Domain.VO;
+package com.phpbae.toy.domain.vo;
 
-import com.phpbae.toy.Domain.Member;
+import com.phpbae.toy.domain.Member;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

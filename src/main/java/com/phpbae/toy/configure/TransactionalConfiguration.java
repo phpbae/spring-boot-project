@@ -1,4 +1,4 @@
-package com.phpbae.toy.Configure;
+package com.phpbae.toy.configure;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

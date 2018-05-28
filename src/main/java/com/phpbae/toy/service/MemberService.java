@@ -1,7 +1,7 @@
-package com.phpbae.toy.Service;
+package com.phpbae.toy.service;
 
-import com.phpbae.toy.Domain.Member;
-import com.phpbae.toy.Domain.VO.MemberVO;
+import com.phpbae.toy.domain.Member;
+import com.phpbae.toy.domain.vo.MemberVO;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

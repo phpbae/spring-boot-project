@@ -1,4 +1,4 @@
-package com.phpbae.toy.Configure;
+package com.phpbae.toy.configure;
 
 
 import org.aspectj.lang.JoinPoint;
@@ -18,14 +18,14 @@ public class LoggerAOPConfiguration {
     private Signature signature;
     private Object target;
 
-    @Before(value = "execution(* com.phpbae.toy.Service.*.*(..))")
+    @Before(value = "execution(* com.phpbae.toy.service.*.*(..))")
     public void beforeLogger(JoinPoint joinPoint) {
         signature = joinPoint.getSignature();
         target = joinPoint.getTarget();
         logger.info(signature.getName() + " Start Process {}", joinPoint);
     }
 
-    @After(value = "execution(* com.phpbae.toy.Service.*.*(..))")
+    @After(value = "execution(* com.phpbae.toy.service.*.*(..))")
     public void afterLogger(JoinPoint joinPoint) {
         signature = joinPoint.getSignature();
         target = joinPoint.getTarget();

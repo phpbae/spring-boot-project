@@ -1,8 +1,8 @@
 package com.phpbae.toy.rest;
 
 
-import com.phpbae.toy.Domain.VO.MemberVO;
-import com.phpbae.toy.Service.MemberServiceImpl;
+import com.phpbae.toy.domain.vo.MemberVO;
+import com.phpbae.toy.service.MemberServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

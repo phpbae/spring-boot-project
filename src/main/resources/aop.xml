@@ -19,7 +19,7 @@
     </tx:advice>
 
     <aop:config>
-        <aop:pointcut id="pointcutService" expression="execution(* com.phpbae.toy.Service..*.*(..))"/>
+        <aop:pointcut id="pointcutService" expression="execution(* com.phpbae.toy.service..*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="pointcutService"/>
     </aop:config>
 
