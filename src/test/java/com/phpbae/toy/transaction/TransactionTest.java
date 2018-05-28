@@ -19,7 +19,7 @@ public class TransactionTest {
     private MemberService memberServiceImpl;
 
     @Test(expected = ArithmeticException.class)
-    public void 트랜잭션Test() throws Exception {
+    public void rollBackTest() throws Exception {
         List<Member> memberList = new ArrayList();
         for (int i = 1; i <= 10; i++) {
             Member member = new Member();
@@ -32,7 +32,7 @@ public class TransactionTest {
     }
 
     @Test(expected = Exception.class)
-    public void 읽기전용트랜잭션Test() throws Exception {
+    public void readOnlyTest() throws Exception {
         List<Member> memberList = new ArrayList();
         for (int i = 1; i <= 10; i++) {
             Member member = new Member();
